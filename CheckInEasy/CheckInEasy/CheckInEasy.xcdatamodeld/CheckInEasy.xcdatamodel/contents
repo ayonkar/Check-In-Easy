@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13241" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BookingT" representedClassName="BookingT" syncable="YES" codeGenerationType="class">
+        <attribute name="bookingId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="by" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventT" syncable="YES"/>
+        <relationship name="with" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserT" syncable="YES"/>
+    </entity>
+    <entity name="EventT" representedClassName="EventT" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="event_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="start_date" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="eventR" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookingT" syncable="YES"/>
+    </entity>
+    <entity name="UserT" representedClassName="UserT" syncable="YES" codeGenerationType="class">
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="userR" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BookingT" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BookingT" positionX="-14400" positionY="-2665" width="128" height="88"/>
+        <element name="EventT" positionX="-14697" positionY="-2493" width="128" height="148"/>
+        <element name="UserT" positionX="-14123" positionY="-2464" width="128" height="88"/>
+    </elements>
+</model>
